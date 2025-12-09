@@ -56,7 +56,9 @@ def crop_video(input_path, output_path):
         print(e.stderr)
 
 
-video_ID = 'EIhIIsPMehg'
+#video_ID = 'EIhIIsPMehg'
+
+video_ID = input("Enter video ID: ")
 
 download_video(video_ID)
 

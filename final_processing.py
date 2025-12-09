@@ -65,7 +65,10 @@ def add_captions(input_path, output_path):
     pipeline = builder.build()
     pipeline.run()
 
-create_clips('EIhIIsPMehg')
+
+video_ID = input("Enter video ID: ")
+
+create_clips(video_ID)
 
 #add_captions(f"data/raw/{video_ID}_cropped.mp4", f"data/processed/{video_ID}_final.mp4")
 

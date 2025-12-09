@@ -87,7 +87,8 @@ def generate_video_ideas(video_ID, output_file, number=10, special_prompt = ""):
 
     #print(response)
 
-video_ID = 'EIhIIsPMehg'
+#video_ID = 'EIhIIsPMehg'
+video_ID = input("Enter video ID: ")
 get_transcript(video_ID)
 print("Generated transcripts!")
 generate_video_ideas(video_ID, f'data/raw/{video_ID}_ideas.json', 15, "Leave the first 5 minutes")
