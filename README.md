@@ -19,6 +19,9 @@ This project is currently under active development. Expect changes, bugs, and mi
 
 ---
 
+<img width="725" height="636" alt="image" src="https://github.com/user-attachments/assets/af9fa2ee-3f95-48c2-824f-7944dc3d0913" />
+
+
 <div align="center">
   <a href="https://moonshot.hackclub.com" target="_blank">
     <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/35ad2be8c916670f3e1ac63c1df04d76a4b337d1_moonshot.png" 
