@@ -5,6 +5,7 @@ from pydantic import BaseModel
 from youtube_transcript_api.formatters import SRTFormatter
 import os
 import srt
+from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -23,6 +24,9 @@ def get_transcript(video_ID, start_time=0, end_time=120, ): #start_time and end_
 
     formatter = SRTFormatter()
     srt_formatted = formatter.format_transcript(snippets)
+
+    dir_create = Path(f"data/raw/{video_ID}.srt")
+    dir_create.parent.mkdir(exist_ok=True, parents=True)
 
     with open(f'data/raw/{video_ID}.srt', 'w', encoding='utf-8') as srt_file:
         srt_file.write(srt_formatted)
