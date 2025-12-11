@@ -30,7 +30,11 @@ def download_video(video_ID, output_path='data/raw/', max_resolution='720p'):
         print(f"\nAn error occured: {e}")
 
 
-def crop_video(input_path, output_path):
+def crop_video(video_ID):
+
+    input_path = f"data/raw/{video_ID}.mp4"
+    output_path = f"data/raw/{video_ID}_cropped.mp4"
+    
     probe = ffmpeg.probe(input_path)
 
     video_stream = next(s for s in probe['streams'] if s['codec_type'] == 'video') ###
@@ -51,18 +55,22 @@ def crop_video(input_path, output_path):
     try:
         cropped_video = ffmpeg.output(cropped_video, audio_stream, output_path, 
                                       vcodec='h264_qsv')        # Apparently it's decent)
+        
         ffmpeg.run(cropped_video)
+        print("Cropped the video in short-form content successfully!")
     except ffmpeg.Error as e:
         print(e.stderr)
 
+if __name__ == "__main__":
+    pass
 
 #video_ID = 'EIhIIsPMehg'
 
-video_ID = input("Enter video ID: ")
+#video_ID = input("Enter video ID: ")
 
-download_video(video_ID)
+#download_video(video_ID)
 
-crop_video(f"data/raw/{video_ID}.mp4", f"data/raw/{video_ID}_cropped.mp4")
+#crop_video(f"data/raw/{video_ID}.mp4", f"data/raw/{video_ID}_cropped.mp4")
 
 #trim first --> crop --> captions
 
